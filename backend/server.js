@@ -2,10 +2,11 @@ const express = require("express");
 const connectDb = require("./db");
 const dotenv = require("dotenv");
 dotenv.config({ path: "./config.env" });
+const cors = require("cors");
 const app = express();
 const faqRouter = require("./routes/faqRoute");
 app.use(express.json());
-
+app.use(cors());
 //Database connected
 connectDb();
 
